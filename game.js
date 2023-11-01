@@ -1,17 +1,18 @@
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
-userClickedPattern = [];
+var userClickedPattern = [];
 
 var gameStarted = false; // Oyunun başladığını takip eden bir değişken
 
+var level = 0;
 // Klavye tuşuna basıldığında çalışacak olay
-$(document).keydown(function (event) {
+$(document).keypress(function () {
   if (!gameStarted) {
     // Oyun başlamamışsa
-    gameStarted = true; // Oyunu başlat
+    $("#level-title").text("Level " + level); // H1 başlığını güncelle
     nextSequence(); // nextSequence işlemini çağır
-    $("#level-title").text("Level 0"); // H1 başlığını güncelle
+    gameStarted = true; // Oyunu başlat
   }
 });
 
@@ -23,6 +24,9 @@ $(".btn").click(function () {
 });
 
 function nextSequence() {
+  level++;
+  $("#level-title").text("Level " + level);
+
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
