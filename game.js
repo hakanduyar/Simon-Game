@@ -3,6 +3,15 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 userClickedPattern = [];
 
+var gameStarted = false;
+
+$(document).keydown(function () {
+  if (!gameStarted) {
+    gameStarted = true;
+    nextSequence();
+  }
+});
+
 $(".btn").click(function () {
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
