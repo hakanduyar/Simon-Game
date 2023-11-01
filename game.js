@@ -38,7 +38,6 @@ function nextSequence() {
 
   playSound(randomChosenColour);
 }
-nextSequence();
 
 function playSound(name) {
   var audio = new Audio("sounds/" + name + ".mp3");
