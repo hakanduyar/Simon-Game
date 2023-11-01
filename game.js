@@ -3,12 +3,15 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 userClickedPattern = [];
 
-var gameStarted = false;
+var gameStarted = false; // Oyunun başladığını takip eden bir değişken
 
-$(document).keydown(function () {
+// Klavye tuşuna basıldığında çalışacak olay
+$(document).keydown(function (event) {
   if (!gameStarted) {
-    gameStarted = true;
-    nextSequence();
+    // Oyun başlamamışsa
+    gameStarted = true; // Oyunu başlat
+    nextSequence(); // nextSequence işlemini çağır
+    $("#level-title").text("Level 0"); // H1 başlığını güncelle
   }
 });
 
