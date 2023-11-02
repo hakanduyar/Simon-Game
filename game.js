@@ -39,7 +39,7 @@ function checkAnswer(currentLevel) {
 
     setTimeout(function () {
       $("body").removeClass("game-over");
-    }, 100);
+    }, 200);
   }
 }
 
