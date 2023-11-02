@@ -20,10 +20,16 @@ $(".btn").click(function () {
   userClickedPattern.push(userChosenColour);
   playSound(userChosenColour);
   animatePress(userChosenColour);
-  checkAnswer();
+  checkAnswer(userClickedPattern.length - 1);
 });
 
-function checkAnswer(currentLevel) {}
+function checkAnswer(currentLevel) {
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+    console.log("success");
+  } else {
+    console.log("wrong");
+  }
+}
 
 function nextSequence() {
   level++;
