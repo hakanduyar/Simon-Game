@@ -2,10 +2,9 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
 var userClickedPattern = [];
-
 var gameStarted = false; // Oyunun başladığını takip eden bir değişken
-
 var level = 0;
+
 // Klavye tuşuna basıldığında çalışacak olay
 $(document).keypress(function () {
   if (!gameStarted) {
@@ -21,7 +20,10 @@ $(".btn").click(function () {
   userClickedPattern.push(userChosenColour);
   playSound(userChosenColour);
   animatePress(userChosenColour);
+  checkAnswer();
 });
+
+function checkAnswer(currentLevel) {}
 
 function nextSequence() {
   level++;
